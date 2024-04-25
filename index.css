@@ -35,6 +35,7 @@ body {
     height: 8vmax;    /* alçària d'un 8% respecte l'alçària de la pantalla */
 }
 <link rel="stylesheet" href="index.css">
+<i>
 #menu {
     display: flex;    /* el menú és un contenidor de tipus flex */
     height: 8vmax;

@@ -10,7 +10,7 @@ body {
     min-height: -webkit-fill-available;    
     margin: 0px;    /* elimina tots els marges del document */
     font-family: sans-serif;    /* un tipus de lletra adient per a llocs web */
-    background-color: #FCDEE0;    /* color de fons en format #RRGGBB */
+    background-color: #FFF933;    /* color de fons en format #RRGGBB */
 }
 #superior {
     display: flex;
@@ -41,7 +41,7 @@ body {
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: #950E17;
+    background-color: #FFF933;
     font-size: 5vmax;
     cursor: pointer;    /* en ordinadors, indica que s'hi pot fer clic */
 }

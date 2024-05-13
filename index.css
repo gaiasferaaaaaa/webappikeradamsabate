@@ -23,7 +23,7 @@ body {
 }
 .seccio {
     flex: 1;    /* les seccions ocupen tot l'espai disponible */
-    display: none;    /* les seccions s'inicien ocultes, excepte la primera */
+    display: flex;    /* les seccions s'inicien ocultes, excepte la primera */
 }
 #seccio_1 {
     display: none;    /* única secció que es mostra a l'inici */

@@ -23,10 +23,10 @@ body {
 }
 .seccio {
     flex: 1;    /* les seccions ocupen tot l'espai disponible */
-    display: flex;    /* les seccions s'inicien ocultes, excepte la primera */
+    display: none;    /* les seccions s'inicien ocultes, excepte la primera */
 }
 #seccio_1 {
-    display: none;    /* única secció que es mostra a l'inici */
+    display: flex;    /* única secció que es mostra a l'inici */
     justify-content: center;    /* contingut centrat en la direcció de disposició */
     align-items: center;    /* contingut centrat en la direcció transversal */
     font-size: 4vmax;

@@ -23,7 +23,7 @@ body {
 }
 .seccio {
     flex: 1;    /* les seccions ocupen tot l'espai disponible */
-    display: none;    /* les seccions s'inicien ocultes, excepte la primera */
+    display: flex;    /* les seccions s'inicien ocultes, excepte la primera */
 }
 #seccio_1 {
     display: none;    /* única secció que es mostra a l'inici */
@@ -51,7 +51,7 @@ body {
         flex-flow: row-reverse;    /* disposició de dreta a esquerra, per mostrar el menú a l'esquerra */
     }
     #superior {
-        display: none;    /* franja superior oculta per optimitzar l'espai */
+        display: flex;    /* franja superior oculta per optimitzar l'espai */
     }
     #menu {
         flex-direction: column;

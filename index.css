@@ -187,5 +187,21 @@ body {
 @media (orientation: landscape) {
     #llista_fotos {
         height: 70vmin;
+        #seccio_5 {
+        flex-direction: row;
     }
+}
+#webcam-container {
+    margin: 2vh;
+}
+#reconeixement {
+    text-align:center;
+}
+#coincidencia {
+    display: none;    /* es farà visible quan es comencin a tenir dades */
+    font-size: 4vh;
+    margin-bottom: 1vh;
+}
+#prediccions {
+    font-size: 3vh;
 }

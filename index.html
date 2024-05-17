@@ -47,6 +47,10 @@
         <button>Nou usuari</button>
       </div>         
     </div>
+    <div id="botons_sessio">
+  <button onclick="inici_sessio()">Inicia sessió</button>
+  <button onclick="nou_usuari()">Nou usuari</button>
+</div>  
     <div id="seccio_1">    <!-- espai central per mostrar contingut -->
         LA VIDA AL MAR
     </div>
@@ -99,4 +103,11 @@
     <div id="coincidencia">COINCIDÈNCIA</div>
     <div id="prediccions"></div>
    </div>
+</div>
+<div id="menu">      
+  <i id="boto_1" class="fa-solid fa-house" onclick="canvia_seccio(1)"></i>     
+  <i id="boto_2" class="fa-solid fa-camera" onclick="canvia_seccio(2)"></i>
+  <i id="boto_3" class="fa-solid fa-image" onclick="canvia_seccio(3)"></i>
+  <i id="boto_4" class="fa-solid fa-map" onclick="canvia_seccio(4)"></i>
+  <i class="fa-solid fa-right-from-bracket" onclick="tanca_sessio()"></i>
 </div>

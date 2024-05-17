@@ -1,63 +1,29 @@
 html {
-    height: -webkit-fill-available;    /* per a dispositius mòbils */
+    height: -webkit-fill-available;
 }
 body {
-    display: flex;    /* tipus de display que ofereix més prestacions que block */
-    flex-direction: column;    /* els elements es disposen de dalt cap abaix */
-    justify-content: space-between;    /* els elements, separats per espais, ocupen tot l'espai disponibles */
-    min-height: 100vh;    /* alçària de la pantalla en navegadors d'escriptori */
-    min-height: 100svh;    /* per a navegadors on la declaració anterior no és precisa */
-    min-height: -webkit-fill-available;    
-    margin: 0px;    /* elimina tots els marges del document */
-    font-family: sans-serif;    /* un tipus de lletra adient per a llocs web */
-    background-color: #58FF33;    /* color de fons en format #RRGGBB */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    min-height: 100svh;
+    min-height: -webkit-fill-available;
+    margin: 0px;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #1592E6;
 }
 #superior {
     display: flex;
-    height: 8vmax;    /* alçària d'un 8% respecte l'alçària de la pantalla */
-    justify-content: center;    /* centra els elements en la direcció de disposició */
-    align-items: center;    /* centra els elements en la direcció perpendicular a la de disposició */
-    font-size: 4vmax;    /* mida d'un 4% respecte l'alçària de la pantalla */
-    color: white;    /* color del text */
-    background-color: #0F1A2E;    /* color de fons */
-}
-.seccio {
-    flex: 1;    /* les seccions ocupen tot l'espai disponible */
-    display: none;    /* les seccions s'inicien ocultes, excepte la primera */
-}
-#seccio_1 {
-    display: none;    /* única secció que es mostra a l'inici */
-    justify-content: center;    /* contingut centrat en la direcció de disposició */
-    align-items: center;    /* contingut centrat en la direcció transversal */
-    font-size: 4vmax;
-}
-#menu {
-    display: flex;    /* el menú és un contenidor de tipus flex */
     height: 8vmax;
-}
-#menu i{
-    flex: 1;    /* cada botó pretén ocupar tot l'espai disponible */
-    display: flex;    /* contenidor flex on centrar-hi la icona */
     justify-content: center;
     align-items: center;
+    font-size: 4vmax;
     color: white;
-    background-color: #0F1A2E;
-    font-size: 5vmax;
-    cursor: pointer;    /* en ordinadors, indica que s'hi pot fer clic */
+    background-color: #EABE3F;
 }
-@media (orientation: landscape) {
-    body {
-        flex-direction: row;    /* sobreescriu la declaració flex-direction: column; */
-        flex-flow: row-reverse;    /* disposició de dreta a esquerra, per mostrar el menú a l'esquerra */
-    }
-    #superior {
-        display: none;    /* franja superior oculta per optimitzar l'espai */
-    }
-    #menu {
-        flex-direction: column;
-        width: 8vmax;
-        height: auto;    /* sobreescriu la declaració height: 8vmax; */
-    }
+#seccio {
+    flex: 1;
+    display: none;
 }
 #seccio_0 {
     display: flex;
@@ -69,29 +35,41 @@ body {
 #credencials {
     display: flex;
     flex-direction: column;
-    text-align: right;
+    text-align: center;
     font-size: 3vmax;
     margin: 5vmin;
 }
-#credencials div {    /* els 2 <div> dins de credencials */
+#credencials div {    
     margin-bottom: 1vmin;
 }
-#credencials input {    /* els 2 quadres de text dins de credencials */
-    max-width: 20vmax;    /* es limita l'espai que ocupen els quadres de text */
+#credencials input {    
+    max-width: 20vmax;    
     font-size: 3vmax;
 }
 #botons_sessio {
     display: flex;
     align-items: center;
 }
-#botons_sessio button {    /* els 2 botons dins de botons_sessio */
+#botons_sessio button {    
     font-size: 3vmax;
     padding: 2vmin;
     margin: 1vmin;
 }
+#seccio_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vmax;
+}
+#seccio_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2vmax;
+}
 #div_foto {
     flex: 1;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -100,13 +78,13 @@ body {
     color: #950E17;
 }
 #foto {
-    max-width: 60vmin;    /* dimensions màximes per a la prveisualització de les fotos */
+    max-width: 60vmin;    
     max-height: 60vmin;
     cursor: pointer;
 }
 #div_control {
     height: 25vmax;
-    display: none;
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -138,8 +116,110 @@ body {
     max-height: 95vmax;
     cursor: pointer;
 }
+#llista_titol {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#llista_titol i {
+    font-size: 4vmax;
+    color:#950E17;
+}
+#llista_titol i:nth-child(1) {
+    flex: 2;
+}
+#llista_titol i:nth-child(2) {
+    flex: 3;
+}
+#llista_titol i:nth-child(3) {
+    flex: 1;
+}
+#llista_fotos {
+    height: 70vmax;
+    overflow-y: scroll;
+}
+#llista_fotos::-webkit-scrollbar {
+    display: none;
+}
+#webcam-container {
+    margin: 2vh;
+}
+#reconeixement {
+    text-align:center;
+}
+#coincidencia {
+    display: none;
+    font-size: 4vh;
+    margin-bottom: 1vh;
+}
+#prediccions {
+    font-size: 3vh;
+}
+.ocult {
+    display: none !important;    /* amb prioritat sobre les declaracions condicionals segons l'orientació */
+}
+.llista_fila {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+.llista_fila div {    /* contenidor de la miniatura de la foto */
+    flex: 2;
+}
+.llista_fila img {    /* miniatura de la foto */
+    width: 10vmax;
+    height: 10vmax;
+    cursor: pointer;
+}
+.llista_fila span {    /* data i hora */
+    flex: 3;
+    font-size: 2vmax;
+}
+.llista_fila i {    /* icona per esborrar la foto */
+    flex: 1;
+    color: #950E17;
+    font-size: 4vmax !important;
+    cursor: pointer;
+}
+#menu {
+    display: flex;
+    height: 8vmax;
+}
+#menu i{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: #950E17;
+    background-color: #000000;
+    font-size: 5vmax;
+    cursor: pointer;
+}
 @media (orientation: landscape) {
+    body {
+        flex-direction: row;    
+        flex-flow: row-reverse;    
+    }
+    #superior {
+        display: none;  
+    }
+    #seccio_1 {
+        display: none;  
+    }
     #seccio_2 {
+        display: none;  
+    }
+    #seccio_6 {
+        flex-direction: row;
+    }
+    #menu {
+        flex-direction: column;
+        width: 8vmax;
+        height: auto;    
+    }
+    #seccio_3 {
         flex-direction: row;
     }
     #div_foto {
@@ -155,53 +235,9 @@ body {
         max-height: 100svh;
     }
     #foto_gran {
-        transform: rotate(-90deg);    /* gir de 90 graus correponent al canvi d'orientació */
+        transform: rotate(-90deg);    
     }
-}
-#llista_titol {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-#llista_titol i {
-    font-size: 4vmax;
-    color:#950E17;
-}
-#llista_titol i:nth-child(1) {    /* primer <i> (miniatura de la foto) */
-    flex: 2;
-}
-#llista_titol i:nth-child(2) {    /* segon <i> (data i hora) */
-    flex: 3;
-}
-#llista_titol i:nth-child(3) {    /* tercer <i> (icona per esborrar la foto) */
-    flex: 1;
-}
-#llista_fotos {
-    height: 70vmax;
-    overflow-y: scroll;
-}
-#llista_fotos::-webkit-scrollbar {
-    display: none;    /* oculta la barra de desplaçament vertical */
-}
-@media (orientation: landscape) {
     #llista_fotos {
         height: 70vmin;
-        #seccio_5 {
-        flex-direction: row;
     }
-}
-#webcam-container {
-    margin: 2vh;
-}
-#reconeixement {
-    text-align:center;
-}
-#coincidencia {
-    display: none;    /* es farà visible quan es comencin a tenir dades */
-    font-size: 4vh;
-    margin-bottom: 1vh;
-}
-#prediccions {
-    font-size: 3vh;
 }

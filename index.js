@@ -102,3 +102,16 @@ window.onload = () => {
         }
     });
 }
+function desa_foto() {
+    let nou_registre = {    // contingut del nou registre de la base de dades
+        Usuari: usuari,    // nom d'usuari
+        Data: new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString(),    // data i hora actuals
+        Foto: document.getElementById("foto").src    // foto
+    };
+    indexedDB.open("Dades").onsuccess = event => {   
+        event.target.result.transaction("Fotos", "readwrite").objectStore("Fotos").add(nou_registre).onsuccess = () => {
+            document.getElementById("desa").style.display = "none";
+            alert("La foto s'ha desat correctament.");    
+        };
+    };
+}

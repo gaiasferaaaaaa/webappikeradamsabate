@@ -1,41 +1,30 @@
-<!DOCTYPE html>    <!-- tipus de document (HTML) -->  
-<html>    <!-- contingut -->
-  <head>    <!-- capçalera -->
-   <link rel="stylesheet" href="index.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css">
-   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
-   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>  
-   <script src="index.js"></script>
-   <i id="desa" class="fa-solid fa-check" onclick="desa_foto()"></i>
+<!DOCTYPE html> <!-- tipus de document (HTML) -->  
+<html lang="ca"> <!-- contingut -->
+  <head> <!-- capçalera -->
+    <meta charset="UTF-8"> <!-- codificació del text (UTF-8) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- adapta la visualització a les mides de la pantalla -->
+    <meta name="description" content="Descripció de la nostra webapp."> <!-- breu descripció per als cercadors -->
+    <title>LA VIDA</title> <!-- títol que es visualitza en la part superior del navegador -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/solid.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>  
+    <script src="index.js"></script>
   </head>
-  <body>    <!-- cos -->
-  </body>
-</html>
-<html lang="ca">
-  <head>
-    <meta charset="UTF-8">    <!-- codificació del text (UTF-8) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">    <!-- adapta la visualització a les mides de la pantalla -->
-    <meta name="description" content="Descripció de la nostra webapp.">    <!-- breu descripció per als cercadors -->
-    <title>    <!-- títol que es visualitza en la part superior del navegador -->
-        LA VIDA
-    </title>
-  </head>
-  <body>
-    <div id="superior">    <!-- franja superior per mostar el nom de la webapp -->
-        LA VIDA
+  <body> <!-- cos -->
+    <div id="superior"> <!-- franja superior per mostar el nom de la webapp -->
+      LA VIDA
     </div>
     <div id="seccio_0" class="seccio">
-      <div>
-        Inici de sessió    <!-- títol de la secció -->
-      </div>
-      <div id="credencials">    <!-- contenidor per als quadres de text -->
+      <div>Inici de sessió <!-- títol de la secció --></div>
+      <div id="credencials"> <!-- contenidor per als quadres de text -->
         <div>
           <label for="nom_usuari">Nom d'usuari</label>
           <input type="text" id="nom_usuari">
         </div>
         <div>
-          <label for="contrasenya">Contrasenya</label>        
+          <label for="contrasenya">Contrasenya</label>
           <input type="password" id="contrasenya">
         </div>
       </div>
@@ -48,20 +37,20 @@
         <button onclick="nou_usuari()">Nou usuari</button>
       </div>  
     </div>
-    <div id="seccio_1">    <!-- espai central per mostrar contingut -->
-        COLAB
+    <div id="seccio_1"> <!-- espai central per mostrar contingut -->
+      COLAB
     </div>
     <div id="seccio_2" class="seccio">
-      <div id="div_foto">    <!-- contenidor de la vista prèvia de la foto feta -->
+      <div id="div_foto"> <!-- contenidor de la vista prèvia de la foto feta -->
         <img id="foto">
-        <i id="icona_camera" class="fa-solid fa-image"></i>    <!-- icona que ocupa l'espai quan encara no s'ha fet la foto -->
+        <i id="icona_camera" class="fa-solid fa-image"></i> <!-- icona que ocupa l'espai quan encara no s'ha fet la foto -->
       </div>
-      <div id="div_control">    <!-- contenidor dels botons per fer i desar la foto -->
-          <label for="obturador">    <!-- etiqueta auxiliar per ocultar el botó predeterminat -->
-            <i class="fa-solid fa-circle-dot"></i>    <!-- icona del botó per fer la foto -->
-          </label>
-          <input type="file" accept="image/*" id="obturador" capture="camera" /> <!-- element que captura la imatge -->
-          <i id="desa" class="fa-solid fa-check"></i>    <!-- icona del botó per desar la foto -->
+      <div id="div_control"> <!-- contenidor dels botons per fer i desar la foto -->
+        <label for="obturador"> <!-- etiqueta auxiliar per ocultar el botó predeterminat -->
+          <i class="fa-solid fa-circle-dot"></i> <!-- icona del botó per fer la foto -->
+        </label>
+        <input type="file" accept="image/*" id="obturador" capture="camera" /> <!-- element que captura la imatge -->
+        <i id="desa" class="fa-solid fa-check" onclick="desa_foto()"></i> <!-- icona del botó per desar la foto -->
       </div>
     </div>
     <canvas id="canvas"></canvas>
@@ -69,23 +58,21 @@
       <img id="foto_gran" />
     </div>
     <div id="seccio_3" class="seccio">
-      <div id="llista_titol">    <!-- capçalera de la llista de fotos -->
-        <i class="fa-solid fa-image"></i>    <!-- per a la miniatura de les fotos -->
-        <i class="fa-solid fa-calendar-days"></i>    <!-- per a la data de captura de les fotos -->
-        <i class="fa-solid fa-trash"></i>    <!-- per esborrar les fotos -->    
+      <div id="llista_titol"> <!-- capçalera de la llista de fotos -->
+        <i class="fa-solid fa-image"></i> <!-- per a la miniatura de les fotos -->
+        <i class="fa-solid fa-calendar-days"></i> <!-- per a la data de captura de les fotos -->
+        <i class="fa-solid fa-trash"></i> <!-- per esborrar les fotos -->    
       </div>
-      <div id="llista_fotos">    <!-- contenidor, inicialment buit, on hi haurà una fila per a cada foto -->
+      <div id="llista_fotos"> <!-- contenidor, inicialment buit, on hi haurà una fila per a cada foto -->
       </div>
     </div>
-    <div id="seccio_4" class="seccio">
-        Secció 4    <!-- s'ha d'eliminar el text "Secció 4" -->
-    </div>
+    <div id="seccio_4" class="seccio"></div> <!-- secció buida, s'ha eliminat el text "Secció 4" -->
     <div id="seccio_5" class="seccio">
       <div>
-        <i id="icona_video" class="fa-solid fa-video"></i>    <!-- icona d'una càmera de vídeo -->
-        <div id="webcam-container"></div>    <!-- contenidor de vídeo -->
+        <i id="icona_video" class="fa-solid fa-video"></i> <!-- icona d'una càmera de vídeo -->
+        <div id="webcam-container"></div> <!-- contenidor de vídeo -->
       </div>
-      <div id="reconeixement">    <!-- espai per visualitzar les dades -->
+      <div id="reconeixement"> <!-- espai per visualitzar les dades -->
         <div id="coincidencia">COINCIDÈNCIA</div>
         <div id="prediccions"></div>
       </div>

@@ -67,7 +67,15 @@
       <div id="llista_fotos"> <!-- contenidor, inicialment buit, on hi haurà una fila per a cada foto -->
       </div>
     </div>
-    <div id="seccio_4" class="seccio"></div> <!-- secció buida, s'ha eliminat el text "Secció 4" -->
+    <div id="seccio_4" class="seccio"></div> <!-- Sección para el mapa -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- Importar Leaflet -->
+<script>
+  // Código para crear y configurar el mapa
+  var mapa = L.map("seccio_4").setView([41.72, 1.82], 8);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(mapa);
+</script>
     <div id="seccio_5" class="seccio">
       <div>
         <i id="icona_video" class="fa-solid fa-video"></i> <!-- icona d'una càmera de vídeo -->

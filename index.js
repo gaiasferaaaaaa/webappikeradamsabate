@@ -130,6 +130,14 @@ function desa_foto() {
         };
     };
 }
+window.onload = () => { 
+    let base_de_dades = storage.getItem("base_de_dades");   
+    if(base_de_dades == null) {
+        indexedDB.open("Dades").onupgradeneeded = event => {   
+            event.target.result.createObjectStore("Fotos", {keyPath: "ID", autoIncrement:true}).createIndex("Usuari_index", "Usuari");
+        }    // les fotos es desen a la taula "Fotos"
+        storage.setItem("base_de_dades","ok");
+    }
     document.getElementById("obturador").addEventListener("change", function() {    // procediment que s'executa quan s'obté el fitxer de la foto realitzada (esdeveniment "change")
         if(this.files[0] != undefined) {    // instruccions que s'executen només si s'obté algun fitxer (només es processa el primer que es rebi)
             let canvas = document.getElementById("canvas");    // contenidor on es desa temporalment la imatge

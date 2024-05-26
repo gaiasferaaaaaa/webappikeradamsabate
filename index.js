@@ -273,7 +273,7 @@ function geoExit(posicio){
     }
 }
 async function inicia_video() {
-    const codi_model = "*********"    // substitueix els asteriscs pel codi del model d'IA que vas crear en una activitat anterior
+    const codi_model = "https://teachablemachine.withgoogle.com/cd6c48f9-ff9f-482f-98ef-86bfc8326f9f "// substitueix els asteriscs pel codi del model d'IA que vas crear en una activitat anterior
     const tmURL = "https://teachablemachine.withgoogle.com/models/" + codi_model;
     const modelURL = tmURL + "/model.json";
     const metadataURL = tmURL + "/metadata.json";

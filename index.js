@@ -1,6 +1,6 @@
 let validat = false;
 let nom, contrasenya;
-let scriptURL = "https://script.google.com/.../exec"; // Sustituir por la URL del script correcto
+let scriptURL = "https://script.google.com/macros/s/AKfycbygt4C300R84kIvF3Cqi0j1gc1LKBC_sfDCF0Xu80SmTmMg6xN9pwELEXatqaWmj91T/exec"; // Sustituir por la URL del script correcto
 
 function canvia_seccio(num_boto) {
     const menu = document.getElementById("menu");

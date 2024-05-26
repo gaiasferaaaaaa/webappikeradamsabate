@@ -243,3 +243,32 @@ function esborra_foto(id) {
         };
     }
 }
+if (num_boto == 4) {
+    mapa.invalidateSize();
+}
+let vegueries = [[41.39, 2.17, "Àmbit metropolità (Barcelona)"],    // llista on cada element és una llista amb els valors de latitud, longitud i nom de vegueria com a elements
+                 [42.17, 0.89, "Alt Pirineu i Aran (Tremp)"],
+                 [41.12, 1.24, "Camp de Tarragona (Tarragona)"],
+                 [41.73, 1.83 ,"Comarques centrals (Manresa)"],
+                 [41.98, 2.82, "Comarques gironines (Girona)"],
+                 [41.62, 0.62, "Ponent (Lleida)"],
+                 [40.81, 0.52, "Terres de l'Ebre (Tortosa)"],
+                 [41.35, 1.70, "Penedès (Vilafranca del Penedès"]];
+for (i in vegueries) {    // per cada element de la llista
+    L.marker([vegueries[i][0], vegueries[i][1]],{title:vegueries[i][2]}).addTo(mapa);
+}
+if (num_boto == 4) {
+    mapa.invalidateSize();
+    if (typeof geoID === "undefined") {    // si encara no s'han obtingut les dades de localització del dispositiu
+        navigator.geolocation.watchPosition(geoExit);    // inicia el seguiment de la localització del dispositiu
+    }
+}
+function geoExit(posicio){
+    let latitud = posicio.coords.latitude;
+    let longitud = posicio.coords.longitude;
+    if (typeof geoID === "undefined") {    
+        geoID = L.marker([latitud, longitud], {zIndexOffset:100, title:"Usuari"}).addTo(mapa);    // es defineix el marcador  geoID i es situa per sobre dels altres
+    } else {    // primeres dades de localització, es crea el marcador d'usuari 
+        geoID.setLatLng([latitud, longitud]);    // actualització de la posició del marcador d'usuari en el mapa
+    }
+}

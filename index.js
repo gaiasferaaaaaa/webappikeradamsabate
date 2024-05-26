@@ -23,16 +23,25 @@ function canvia_seccio(num_boto) {
 function inici_sessio() {
     nom = document.getElementById("nom_usuari").value;
     contrasenya = document.getElementById("contrasenya").value;
+    console.log("Iniciando sesión con:", nom, contrasenya);
     let consulta = `${scriptURL}?query=select&where=usuari&is=${nom}&and=contrasenya&equal=${contrasenya}`;
+    console.log("Consulta URL:", consulta);
     fetch(consulta)
-        .then((resposta) => resposta.json())
         .then((resposta) => {
+            console.log("Respuesta del servidor:", resposta);
+            return resposta.json();
+        })
+        .then((resposta) => {
+            console.log("Datos recibidos:", resposta);
             if (resposta.length === 0) {
                 window.alert("El nom d'usuari o la contrasenya no són correctes.");
             } else {
                 window.alert("S'ha iniciat correctament la sessió.");
                 inicia_sessio();
             }
+        })
+        .catch((error) => {
+            console.error("Error en la solicitud:", error);
         });
 }
 
@@ -46,11 +55,14 @@ function nou_usuari() {
     nom = document.getElementById("nom_usuari").value;
     contrasenya = document.getElementById("contrasenya").value;
     let consulta_1 = `${scriptURL}?query=select&where=usuari&is=${nom}`;
+    console.log("Consulta para nuevo usuario:", consulta_1);
     fetch(consulta_1)
         .then((resposta) => resposta.json())
         .then((resposta) => {
+            console.log("Datos recibidos para nuevo usuario:", resposta);
             if (resposta.length === 0) {
                 let consulta_2 = `${scriptURL}?query=insert&values=${nom}$$${contrasenya}`;
+                console.log("Consulta de inserción:", consulta_2);
                 fetch(consulta_2)
                     .then((resposta) => {
                         if (resposta.ok) {
@@ -59,10 +71,16 @@ function nou_usuari() {
                         } else {
                             alert("S'ha produït un error en el registre d'usuari.");
                         }
+                    })
+                    .catch((error) => {
+                        console.error("Error en la inserción de usuario:", error);
                     });
             } else {
                 alert("Ja existeix un usuari amb aquest nom.");
             }
+        })
+        .catch((error) => {
+            console.error("Error en la verificación de usuario:", error);
         });
 }
 
